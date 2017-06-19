@@ -5,6 +5,11 @@ function to_roman(input) {
 
   // perulangan sebanyak jumlah index array "angkaLatin"
   for (i=0; i<angkaLatin.length; i++) {
+    // validasi..
+    // jika "input" lebih besar atau sama dgn nilai index array "angkaLatin" saat ini,
+    // maka return nilai index array "angkaRomawi" saat ini + ("input" - "angkaLatin" saat ini)
+    // dan seterusnya.
+    // jika "input" sudah bernilai 0, return string kosong.
     if (input >= angkaLatin[i]) {
       return angkaRomawi[i] + to_roman(input - angkaLatin[i]);
     }
