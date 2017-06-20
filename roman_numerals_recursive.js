@@ -1,6 +1,19 @@
+
 function to_roman(input) {
-  // start your code here
-  return to_roman(input); 
+  var nums = [1000,900,500,400,100,90,50,40,10,9,5,4,1];//variabel angka unik
+  var romans = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];//variabel romawi
+  var result=""
+  if(input==0){ //
+    return "";
+  }
+  for(i=0; i<nums.length; i++){ //lakukan pengulangan sepanjang nums
+    if(input>=nums[i]){ //ketika angka masukannya lebih besar dari sama dengan deret dari nums, maka
+      return romans[i] + to_roman(input - nums[i]); // mereturn romawi dan melakukan pengecekan untuk mendapatkan selisih
+    }
+  }
+  
+  // return result;
+  //return to_roman(input);
 }
 
 console.log('My totally sweet testing script for new roman\n')
