@@ -5,12 +5,14 @@ function to_roman(input) {
 
   if (input<1) {
     return "";
-  }for (var i = 0; i < decimal.length; i++) {
-    if (input>=decimal[i]) {
-      return roman[i] + to_roman(input-decimal[i]);
+  } else {
+    for (var i = 0; i < decimal.length; i++) {
+      if (input>=decimal[i]) {
+        return roman[i] + to_roman(input-decimal[i]);
+      }
     }
   }
-  }
+}
 
 console.log('My totally sweet testing script for new roman\n')
 console.log('input | expected | actual')
