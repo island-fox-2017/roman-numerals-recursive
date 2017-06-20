@@ -20,14 +20,13 @@ function to_roman(input) {
   }
 
   if (input === 0) {
-    romanRecursive += "";
+    return "";
   };
   for (i in keys) {
     if (input >= keys[i]) {
       return i + to_roman(input - keys[i]);
     }
   }
-  return ""
 }
 
 console.log('My totally sweet testing script for new roman\n')
