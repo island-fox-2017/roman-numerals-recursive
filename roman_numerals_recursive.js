@@ -1,6 +1,20 @@
-function to_roman(input) {
+function to_roman(input, romawi = '') {
   // start your code here
-  return to_roman(input); 
+let noArab = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
+let noRomawi = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'];
+    
+
+for (let i = noArab.length - 1; i >= 0; i--) {
+    if (input >= noArab[i]) {
+      romawi+=noRomawi[i];
+      input -= noArab[i];
+    }
+  }
+  if (input === 0) {
+    return romawi
+  } else {
+    return to_roman(input, romawi);
+  }
 }
 
 console.log('My totally sweet testing script for new roman\n')
